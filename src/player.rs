@@ -2,8 +2,11 @@ use crate::game::Move;
 
 pub trait Player {
 
-    fn my_move(&mut self) -> Move;
-    fn enemy_move(&self, enemy: &mut Self) -> Move;
+    fn my_move(&mut self) -> Move {
+        unimplemented!()
+    }
+    fn send_move(&mut self, mov: &Move) -> std::io::Result<()>;
+    fn enemy_move(&self) -> std::io::Result<Move>;
 
 
 }

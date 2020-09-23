@@ -1,8 +1,9 @@
-use std::net::{SocketAddrV4, TcpListener, ToSocketAddrs, TcpStream};
-use crate::player::Player;
-use crate::game::Move;
 use std::env::set_current_dir;
-use std::io::{BufReader, BufRead, BufWriter, Write};
+use std::io::{BufRead, BufReader, BufWriter, Result, Write};
+use std::net::{SocketAddrV4, TcpListener, TcpStream, ToSocketAddrs};
+
+use crate::game::Move;
+use crate::player::Player;
 
 pub struct Server {
     server_name: String,
@@ -29,7 +30,7 @@ impl Server {
             let mut buffered_reader = BufReader::new(&stream);
             let mut confirm_message = String::new();
             buffered_reader.read_line(&mut confirm_message)?;
-            if confirm_message != "RPS Client Game Connect" {
+            if confirm_message != "RPS Client Game Connect\n" {
                 panic!("Connection not the client for this game");
             }
             let mut writer = BufWriter::new(&stream);
@@ -42,12 +43,16 @@ impl Server {
 }
 
 impl Player for Server {
-    fn my_move(&mut self) -> Move {
-        unimplemented!()
+    fn send_move(&mut self, mov: &Move) -> Result<()> {
+        let mut writer = BufWriter::new(self.client.as_ref().unwrap());
+        writeln!(writer, "{}", mov.to_string())
     }
 
-    fn enemy_move(&self, enemy: &mut Self) -> Move {
-        unimplemented!()
+    fn enemy_move(&self) -> Result<Move> {
+        let mut reader = BufReader::new(self.client.as_ref().unwrap());
+        let mut enemy_move: String = String::new();
+        reader.read_line(&mut enemy_move)?;
+        Ok(enemy_move.into())
     }
 }
 

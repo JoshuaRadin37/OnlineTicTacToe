@@ -21,16 +21,19 @@
     <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ee61e7e3-0b9d-4f76-ac09-f34b84771805" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/project1.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Cargo.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/client.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/game.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/player.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/server.rs" afterDir="false" />
+    <list default="true" id="52bd2ac6-95c9-42c2-8522-78c36bf46b9e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lib.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/local_test.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/project1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/project1.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/client.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/game.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/player.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/player.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/server.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,29 +47,29 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MacroExpansionManager">
-    <option name="directoryName" value="5mhw6a64" />
+    <option name="directoryName" value="hxiehelu" />
   </component>
-  <component name="ProjectId" id="1hvPXWQCu6Y743Y5j7KxhXbRutN" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="1hvrt73lBjeuG8fEGtcsAbVLIh9" />
   <component name="ProjectViewState">
-    <option name="foldersAlwaysOnTop" value="false" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="cf.first.check.clang-format" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="org.rust.cargo.project.model.PROJECT_DISCOVERY" value="true" />
-    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
   </component>
   <component name="RunManager">
+    <configuration default="true" type="Application" factoryName="Application">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Run" type="CargoCommandRunConfiguration" factoryName="Cargo Command" nameIsGenerated="true">
       <option name="channel" value="DEFAULT" />
       <option name="command" value="run" />
@@ -91,12 +94,12 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="ee61e7e3-0b9d-4f76-ac09-f34b84771805" name="Default Changelist" comment="" />
-      <created>1600888633352</created>
+      <changelist id="52bd2ac6-95c9-42c2-8522-78c36bf46b9e" name="Default Changelist" comment="" />
+      <created>1600902618785</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1600888633352</updated>
-      <workItem from="1600888635081" duration="2086000" />
+      <updated>1600902618785</updated>
+      <workItem from="1600902619922" duration="2616000" />
     </task>
     <servers />
   </component>
@@ -114,33 +117,30 @@
       </map>
     </option>
   </component>
-  <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-  </component>
   <component name="WindowStateProjectService">
-    <state x="184" y="101" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1600890275480">
-      <screen x="0" y="23" width="1440" height="830" />
+    <state x="0" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1600902674552">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="184" y="101" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.830@0.23.1440.830" timestamp="1600890275480" />
-    <state x="533" y="162" key="#com.intellij.ide.util.MemberChooser" timestamp="1600889633544">
-      <screen x="0" y="23" width="1440" height="830" />
+    <state x="0" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1600902674552" />
+    <state x="285" y="239" key="#com.intellij.ide.util.MemberChooser" timestamp="1600904808958">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="533" y="162" key="#com.intellij.ide.util.MemberChooser/0.23.1440.830@0.23.1440.830" timestamp="1600889633544" />
-    <state width="1398" height="215" key="GridCell.Tab.0.bottom" timestamp="1600890716122">
-      <screen x="0" y="23" width="1440" height="830" />
+    <state x="285" y="239" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1600904808958" />
+    <state width="914" height="281" key="GridCell.Tab.0.bottom" timestamp="1600905246602">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1398" height="215" key="GridCell.Tab.0.bottom/0.23.1440.830@0.23.1440.830" timestamp="1600890716122" />
-    <state width="1398" height="215" key="GridCell.Tab.0.center" timestamp="1600890716121">
-      <screen x="0" y="23" width="1440" height="830" />
+    <state width="914" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1600905246602" />
+    <state width="914" height="281" key="GridCell.Tab.0.center" timestamp="1600905246602">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1398" height="215" key="GridCell.Tab.0.center/0.23.1440.830@0.23.1440.830" timestamp="1600890716121" />
-    <state width="1398" height="215" key="GridCell.Tab.0.left" timestamp="1600890716120">
-      <screen x="0" y="23" width="1440" height="830" />
+    <state width="914" height="281" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1600905246602" />
+    <state width="914" height="281" key="GridCell.Tab.0.left" timestamp="1600905246602">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1398" height="215" key="GridCell.Tab.0.left/0.23.1440.830@0.23.1440.830" timestamp="1600890716120" />
-    <state width="1398" height="215" key="GridCell.Tab.0.right" timestamp="1600890716121">
-      <screen x="0" y="23" width="1440" height="830" />
+    <state width="914" height="281" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1600905246602" />
+    <state width="914" height="281" key="GridCell.Tab.0.right" timestamp="1600905246602">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1398" height="215" key="GridCell.Tab.0.right/0.23.1440.830@0.23.1440.830" timestamp="1600890716121" />
+    <state width="914" height="281" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1600905246602" />
   </component>
 </project>
