@@ -5,6 +5,7 @@ use std::time::Duration;
 
 use crate::game::Move;
 use crate::player::Player;
+use std::convert::TryInto;
 
 pub struct Client {
     name: String,
@@ -46,7 +47,7 @@ impl Player for Client {
         let mut reader = BufReader::new(&self.stream);
         let mut enemy_move: String = String::new();
         reader.read_line(&mut enemy_move)?;
-        Ok(enemy_move.into())
+        Ok(enemy_move.trim_end().to_string().try_into().unwrap())
     }
 }
 

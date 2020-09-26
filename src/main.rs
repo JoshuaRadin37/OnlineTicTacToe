@@ -9,7 +9,8 @@ use project1::game::{GameResult, Move};
 fn main() {
     println!("Hello! Welcome to the Rock Paper Scissors");
 
-    let args: Vec<String> = std::env::args().collect();
+    let mut args: Vec<String> = std::env::args().collect();
+    args.remove(0);
     if args.len() != 3 {
         eprintln!("Command line argument must be either\n\tserver port\nor\n\tclient ip:port");
         exit(-1);
@@ -59,8 +60,8 @@ fn client(args: &Vec<String>) {
 
 fn server(args: &Vec<String>, name: &String){
     let port: u16 = args[1].parse().expect("Second argument is not a valid port");
-    let addr = SocketAddr::from(([127, 0, 0, 1], port));
-    println!("Tell Opponent to connect to this address: {}", addr);
+    let addr = SocketAddr::from(([0, 0, 0, 0], port));
+    //println!("Tell Opponent to connect to this address: {}", addr);
     let mut server = Server::new(name.clone(), addr).expect(format!("Could not open socket on port {}", port).as_ref());
     server.wait_for_connect().expect("No client connected");
 

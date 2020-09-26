@@ -4,6 +4,7 @@ use std::net::{SocketAddrV4, TcpListener, TcpStream, ToSocketAddrs};
 
 use crate::game::Move;
 use crate::player::Player;
+use std::convert::TryInto;
 
 pub struct Server {
     server_name: String,
@@ -52,7 +53,7 @@ impl Player for Server {
         let mut reader = BufReader::new(self.client.as_ref().unwrap());
         let mut enemy_move: String = String::new();
         reader.read_line(&mut enemy_move)?;
-        Ok(enemy_move.into())
+        Ok(enemy_move.trim_end().to_string().try_into().unwrap())
     }
 }
 
