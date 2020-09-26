@@ -1,10 +1,10 @@
-use project1::server::Server;
-use std::process::exit;
-use std::net::{SocketAddr, ToSocketAddrs};
 use project1::client::Client;
+use project1::server::Server;
+use std::net::{SocketAddr, ToSocketAddrs};
+use std::process::exit;
 
-use project1::player::Player;
 use project1::game::{GameResult, Move};
+use project1::player::Player;
 
 fn main() {
     println!("Hello! Welcome to the Rock Paper Scissors");
@@ -26,11 +26,13 @@ fn main() {
         eprintln!("Either client or server must be the first argument");
         exit(-1);
     };
-
 }
 
+/// Runs the client
 fn client(args: &[String]) {
-    let addrs = args[1].to_socket_addrs().expect("Second argument is a not valid socket address");
+    let addrs = args[1]
+        .to_socket_addrs()
+        .expect("Second argument is a not valid socket address");
     let mut found_client = None;
     for addr in addrs {
         let client = Client::new(args[2].clone(), addr);
@@ -52,14 +54,17 @@ fn client(args: &[String]) {
             end_game(&client, &my_move, &enemy_move)
         }
     }
-
 }
 
-fn server(args: &[String], name: &str){
-    let port: u16 = args[1].parse().expect("Second argument is not a valid port");
+/// Runs the server
+fn server(args: &[String], name: &str) {
+    let port: u16 = args[1]
+        .parse()
+        .expect("Second argument is not a valid port");
     let addr = SocketAddr::from(([0, 0, 0, 0], port));
     //println!("Tell Opponent to connect to this address: {}", addr);
-    let mut server = Server::new(name.to_string(), addr).unwrap_or_else(|_| panic!("Could not open socket on port {}", port));
+    let mut server = Server::new(name.to_string(), addr)
+        .unwrap_or_else(|_| panic!("Could not open socket on port {}", port));
     server.wait_for_connect().expect("No client connected");
 
     let my_move = server.my_move();
@@ -69,15 +74,19 @@ fn server(args: &[String], name: &str){
     end_game(&server, &my_move, &enemy_move)
 }
 
+/// Mutually shared behavior between the client and the server that ends the game
 fn end_game(player: &dyn Player, my_move: &Move, enemy_move: &Move) {
-    println!("{} played: {}    {} played: {}", player.my_name(), my_move, player.enemy_name().unwrap(), enemy_move);
+    println!(
+        "{} played: {}    {} played: {}",
+        player.my_name(),
+        my_move,
+        player.enemy_name().unwrap(),
+        enemy_move
+    );
     let result = my_move.fight(&enemy_move);
     match result {
         GameResult::Win => println!("You won!"),
         GameResult::Loss => println!("You lost!"),
-        GameResult::Tie => println!("You tied!")
+        GameResult::Tie => println!("You tied!"),
     }
 }
-
-
-

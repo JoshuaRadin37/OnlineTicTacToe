@@ -5,25 +5,38 @@ use std::net::{TcpListener, TcpStream, ToSocketAddrs};
 use crate::game::Move;
 use crate::player::Player;
 
+/// The server struct. The server must be created first before a client can run. The server can only
+/// hook into one client. Once the client has connected, the game runs to completion. Once a server
+/// is dropped, the TcpListener is also dropped and the port is closed.
 pub struct Server {
     server_name: String,
     listener: TcpListener,
     client: Option<TcpStream>,
-    enemy_name: Option<String>
+    enemy_name: Option<String>,
 }
 
 impl Server {
-
-    pub fn new<A : ToSocketAddrs>(name: String, addr: A) -> std::io::Result<Self> {
+    /// Creates a new server, with the player name and at an address. The address should be a local address,
+    /// either being local host or `0.0.0.0`
+    pub fn new<A: ToSocketAddrs>(name: String, addr: A) -> std::io::Result<Self> {
         let listener = TcpListener::bind(addr)?;
         Ok(Server {
             server_name: name,
             listener,
             client: None,
-            enemy_name: None
+            enemy_name: None,
         })
     }
 
+    /// Tells the server to wait for a client to connect. The server will check to see if the process that
+    /// connects to the server is an RCP client. The process after a process connects to the server goes as follows:
+    ///
+    /// 1. Client sends a specific message to this server establishing that is an RCP client
+    /// 2. The server then sends back a message to the client letting it know that this is an RCP server
+    /// 3. The server then sends the name of the server player
+    /// 4. The client then sends the name of the client player
+    ///
+    /// If any of the above steps fail, the function fails and returns an error.
     pub fn wait_for_connect(&mut self) -> std::io::Result<()> {
         let connection = self.listener.accept()?;
 
@@ -47,8 +60,6 @@ impl Server {
             let enemy = enemy_name.trim_end().to_string();
             println!("{} has joined the game", enemy);
             self.enemy_name = Some(enemy);
-
-
         }
         self.client = Some(stream);
         Ok(())
@@ -76,5 +87,3 @@ impl Player for Server {
         self.enemy_name.as_deref()
     }
 }
-
-

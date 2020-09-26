@@ -21,7 +21,16 @@
     <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="52bd2ac6-95c9-42c2-8522-78c36bf46b9e" name="Default Changelist" comment="Cleaned up compiler output" />
+    <list default="true" id="52bd2ac6-95c9-42c2-8522-78c36bf46b9e" name="Default Changelist" comment="Cleaned up compiler output">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/client.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/game.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/player.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/player.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/server.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/local_test.rs" beforeDir="false" afterPath="$PROJECT_DIR$/tests/local_test.rs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -94,15 +103,10 @@
         <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
     <list>
-      <item itemvalue="Cargo.Run Server" />
-      <item itemvalue="Cargo.Run Client" />
       <item itemvalue="Cargo.Run Client (1)" />
+      <item itemvalue="Cargo.Run Client" />
+      <item itemvalue="Cargo.Run Server" />
     </list>
   </component>
   <component name="RustProjectSettings">
@@ -121,6 +125,7 @@
       <workItem from="1600902619922" duration="4140000" />
       <workItem from="1601146952771" duration="601000" />
       <workItem from="1601147574500" duration="4677000" />
+      <workItem from="1601157642905" duration="1629000" />
     </task>
     <task id="LOCAL-00001" summary="maybe works?">
       <created>1600905281821</created>
@@ -184,22 +189,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="285" y="239" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1601148984750" />
-    <state width="1877" height="281" key="GridCell.Tab.0.bottom" timestamp="1601152425740">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1398" height="215" key="GridCell.Tab.0.bottom" timestamp="1601157765905">
+      <screen x="0" y="23" width="1440" height="830" />
     </state>
     <state width="1877" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1601152425740" />
-    <state width="1877" height="281" key="GridCell.Tab.0.center" timestamp="1601152425740">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1398" height="215" key="GridCell.Tab.0.bottom/0.23.1440.830@0.23.1440.830" timestamp="1601157765905" />
+    <state width="1398" height="215" key="GridCell.Tab.0.center" timestamp="1601157765904">
+      <screen x="0" y="23" width="1440" height="830" />
     </state>
     <state width="1877" height="281" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1601152425740" />
-    <state width="1877" height="281" key="GridCell.Tab.0.left" timestamp="1601152425740">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1398" height="215" key="GridCell.Tab.0.center/0.23.1440.830@0.23.1440.830" timestamp="1601157765904" />
+    <state width="1398" height="215" key="GridCell.Tab.0.left" timestamp="1601157765903">
+      <screen x="0" y="23" width="1440" height="830" />
     </state>
     <state width="1877" height="281" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1601152425740" />
-    <state width="1877" height="281" key="GridCell.Tab.0.right" timestamp="1601152425740">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1398" height="215" key="GridCell.Tab.0.left/0.23.1440.830@0.23.1440.830" timestamp="1601157765903" />
+    <state width="1398" height="215" key="GridCell.Tab.0.right" timestamp="1601157765904">
+      <screen x="0" y="23" width="1440" height="830" />
     </state>
     <state width="1877" height="281" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1601152425740" />
+    <state width="1398" height="215" key="GridCell.Tab.0.right/0.23.1440.830@0.23.1440.830" timestamp="1601157765904" />
     <state width="1877" height="281" key="GridCell.Tab.1.bottom" timestamp="1601152132186">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -233,23 +242,18 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/src/client.rs</url>
-          <line>57</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/src/server.rs</url>
-          <line>31</line>
+          <line>47</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/src/client.rs</url>
-          <line>18</line>
+          <line>40</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/src/server.rs</url>
-          <line>39</line>
+          <line>64</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
