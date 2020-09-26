@@ -52,7 +52,7 @@ fn client(args: &Vec<String>) {
             let my_move = client.my_move();
             client.send_move(&my_move).expect("Failed to send move");
             let enemy_move = client.enemy_move().expect("Failed to receive move");
-            end_game(&my_move, &enemy_move)
+            end_game(&client, &my_move, &enemy_move)
         }
     }
 
@@ -69,11 +69,11 @@ fn server(args: &Vec<String>, name: &String){
     server.send_move(&my_move).expect("Failed to send move");
     let enemy_move = server.enemy_move().expect("Failed to receive move");
 
-    end_game(&my_move, &enemy_move)
+    end_game(&server, &my_move, &enemy_move)
 }
 
-fn end_game(my_move: &Move, enemy_move: &Move) {
-    println!("You played: {}    Enemy player: {}", my_move, enemy_move);
+fn end_game(player: &dyn Player, my_move: &Move, enemy_move: &Move) {
+    println!("{} played: {}    {} played: {}", player.my_name(), my_move, player.enemy_name().unwrap(), enemy_move);
     let result = my_move.fight(&enemy_move);
     match result {
         GameResult::Win => println!("You won!"),

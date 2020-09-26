@@ -9,6 +9,7 @@ use std::convert::TryInto;
 
 pub struct Client {
     name: String,
+    enemy_name: String,
     stream: TcpStream
 }
 
@@ -26,12 +27,20 @@ impl Client {
         }
 
 
+        confirm_message.clear();
         buffered_reader.read_line(&mut confirm_message)?;
-        println!("Joined Game: {}", confirm_message);
+        let server_name = confirm_message.trim_end();
+        println!("Joined {}'s Game", server_name);
+
+        {
+            let mut writer = BufWriter::new(&stream);
+            writeln!(writer, "{}", name);
+        }
 
         Ok(Client {
             name,
-            stream
+            enemy_name: server_name.to_string(),
+            stream,
         })
     }
 }
@@ -48,6 +57,14 @@ impl Player for Client {
         let mut enemy_move: String = String::new();
         reader.read_line(&mut enemy_move)?;
         Ok(enemy_move.trim_end().to_string().try_into().unwrap())
+    }
+
+    fn my_name(&self) -> &str {
+        self.name.as_ref()
+    }
+
+    fn enemy_name(&self) -> Option<&str> {
+        Option::Some(self.enemy_name.as_ref())
     }
 }
 

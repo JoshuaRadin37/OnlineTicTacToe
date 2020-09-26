@@ -21,4 +21,7 @@ pub trait Player {
     fn send_move(&mut self, mov: &Move) -> std::io::Result<()>;
     fn enemy_move(&self) -> std::io::Result<Move>;
 
+    fn my_name(&self) -> &str;
+    fn enemy_name(&self) -> Option<&str>;
+
 }

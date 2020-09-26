@@ -9,7 +9,8 @@ use std::convert::TryInto;
 pub struct Server {
     server_name: String,
     listener: TcpListener,
-    client: Option<TcpStream>
+    client: Option<TcpStream>,
+    enemy_name: Option<String>
 }
 
 impl Server {
@@ -19,13 +20,14 @@ impl Server {
         Ok(Server {
             server_name: name,
             listener,
-            client: None
+            client: None,
+            enemy_name: None
         })
     }
 
     pub fn wait_for_connect(&mut self) -> std::io::Result<()> {
         let mut connection = self.listener.accept()?;
-        println!("Client Connected from Address: {:?}", connection.1);
+
         let mut stream = connection.0;
         {
             let mut buffered_reader = BufReader::new(&stream);
@@ -34,9 +36,20 @@ impl Server {
             if confirm_message != "RPS Client Game Connect\n" {
                 panic!("Connection not the client for this game");
             }
-            let mut writer = BufWriter::new(&stream);
-            writeln!(writer, "RPS Server Game Connection Confirmed")?;
-            writeln!(writer, "{}", self.server_name)?;
+
+            {
+                let mut writer = BufWriter::new(&stream);
+                writeln!(writer, "RPS Server Game Connection Confirmed")?;
+                writeln!(writer, "{}", self.server_name)?;
+            }
+
+            let mut enemy_name = String::new();
+            buffered_reader.read_line(&mut enemy_name);
+            let enemy = enemy_name.trim_end().to_string();
+            println!("{} has joined the game", enemy);
+            self.enemy_name = Some(enemy);
+
+
         }
         self.client = Some(stream);
         Ok(())
@@ -54,6 +67,14 @@ impl Player for Server {
         let mut enemy_move: String = String::new();
         reader.read_line(&mut enemy_move)?;
         Ok(enemy_move.trim_end().to_string().try_into().unwrap())
+    }
+
+    fn my_name(&self) -> &str {
+        self.server_name.as_ref()
+    }
+
+    fn enemy_name(&self) -> Option<&str> {
+        self.enemy_name.as_deref()
     }
 }
 
