@@ -34,7 +34,7 @@ impl Client {
 
         {
             let mut writer = BufWriter::new(&stream);
-            writeln!(writer, "{}", name);
+            writeln!(writer, "{}", name)?;
         }
 
         Ok(Client {

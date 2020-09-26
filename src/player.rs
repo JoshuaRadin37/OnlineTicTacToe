@@ -9,8 +9,8 @@ pub trait Player {
         loop {
             let mut buffer = String::new();
             print!("Your move (rock, paper, scissors): ");
-            stdout().flush();
-            reader.read_line(&mut buffer);
+            stdout().flush().expect("Failed to flush stdout");
+            reader.read_line(&mut buffer).expect("Failed to get player's move");
             let mov = buffer.trim_end();
 
             if let Ok(ret) = mov.to_string().try_into() {

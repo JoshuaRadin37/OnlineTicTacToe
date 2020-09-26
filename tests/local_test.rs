@@ -1,4 +1,4 @@
-use std::net::{Ipv4Addr, SocketAddr, IpAddr};
+use std::net::{SocketAddr, IpAddr};
 use project1::server::Server;
 use project1::client::Client;
 
@@ -17,9 +17,9 @@ fn local_test() {
 
     let handle = std::thread::spawn(server_fn);
 
-    let client = Client::new("test_client".to_string(), sock_addr).unwrap();
+    let _client = Client::new("test_client".to_string(), sock_addr).unwrap();
 
 
-    handle.join();
+    handle.join().unwrap().unwrap();
 
 }

@@ -21,12 +21,13 @@
     <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="52bd2ac6-95c9-42c2-8522-78c36bf46b9e" name="Default Changelist" comment="seems to fully work">
+    <list default="true" id="52bd2ac6-95c9-42c2-8522-78c36bf46b9e" name="Default Changelist" comment="Cleaned up output">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/client.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/player.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/player.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/server.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/server.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/local_test.rs" beforeDir="false" afterPath="$PROJECT_DIR$/tests/local_test.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,11 +57,24 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="org.rust.cargo.project.model.PROJECT_DISCOVERY" value="true" />
+    <property name="settings.editor.selected.configurable" value="language.rust.cargo" />
   </component>
-  <component name="RunManager" selected="Cargo.Run Client">
+  <component name="RunManager" selected="Cargo.Run Client (1)">
     <configuration default="true" type="Application" factoryName="Application">
       <method v="2">
         <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Run Client (1)" type="CargoCommandRunConfiguration" factoryName="Cargo Command">
+      <option name="channel" value="DEFAULT" />
+      <option name="command" value="run client cycle1.csug.rochester.edu:5432 &quot;Josh Enemy!&quot;" />
+      <option name="allFeatures" value="false" />
+      <option name="emulateTerminal" value="false" />
+      <option name="backtrace" value="SHORT" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <envs />
+      <method v="2">
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
       </method>
     </configuration>
     <configuration name="Run Client" type="CargoCommandRunConfiguration" factoryName="Cargo Command">
@@ -95,9 +109,11 @@
     <list>
       <item itemvalue="Cargo.Run Server" />
       <item itemvalue="Cargo.Run Client" />
+      <item itemvalue="Cargo.Run Client (1)" />
     </list>
   </component>
   <component name="RustProjectSettings">
+    <option name="runExternalLinterOnTheFly" value="true" />
     <option name="toolchainHomeDirectory" value="$USER_HOME$/.cargo/bin" />
     <option name="version" value="2" />
   </component>
@@ -111,7 +127,7 @@
       <updated>1600902618785</updated>
       <workItem from="1600902619922" duration="4140000" />
       <workItem from="1601146952771" duration="601000" />
-      <workItem from="1601147574500" duration="3033000" />
+      <workItem from="1601147574500" duration="4587000" />
     </task>
     <task id="LOCAL-00001" summary="maybe works?">
       <created>1600905281821</created>
@@ -127,7 +143,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601148282977</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Cleaned up output">
+      <created>1601150726897</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1601150726897</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -148,53 +171,58 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="maybe works?" />
     <MESSAGE value="seems to fully work" />
-    <option name="LAST_COMMIT_MESSAGE" value="seems to fully work" />
+    <MESSAGE value="Cleaned up output" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cleaned up output" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="0" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601147873819">
+    <state x="0" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601151111285">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="0" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601147873819" />
+    <state x="0" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601151111285" />
     <state x="285" y="239" key="#com.intellij.ide.util.MemberChooser" timestamp="1601148984750">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="285" y="239" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1601148984750" />
-    <state width="1877" height="281" key="GridCell.Tab.0.bottom" timestamp="1601150482751">
+    <state width="1877" height="281" key="GridCell.Tab.0.bottom" timestamp="1601152300020">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1601150482751" />
-    <state width="1877" height="281" key="GridCell.Tab.0.center" timestamp="1601150482751">
+    <state width="1877" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1601152300020" />
+    <state width="1877" height="281" key="GridCell.Tab.0.center" timestamp="1601152300020">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1601150482751" />
-    <state width="1877" height="281" key="GridCell.Tab.0.left" timestamp="1601150482751">
+    <state width="1877" height="281" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1601152300020" />
+    <state width="1877" height="281" key="GridCell.Tab.0.left" timestamp="1601152300020">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1601150482751" />
-    <state width="1877" height="281" key="GridCell.Tab.0.right" timestamp="1601150482751">
+    <state width="1877" height="281" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1601152300020" />
+    <state width="1877" height="281" key="GridCell.Tab.0.right" timestamp="1601152300020">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1601150482751" />
-    <state width="1877" height="281" key="GridCell.Tab.1.bottom" timestamp="1601150482751">
+    <state width="1877" height="281" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1601152300020" />
+    <state width="1877" height="281" key="GridCell.Tab.1.bottom" timestamp="1601152132186">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1601150482751" />
-    <state width="1877" height="281" key="GridCell.Tab.1.center" timestamp="1601150482751">
+    <state width="1877" height="281" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1601152132186" />
+    <state width="1877" height="281" key="GridCell.Tab.1.center" timestamp="1601152132186">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1601150482751" />
-    <state width="1877" height="281" key="GridCell.Tab.1.left" timestamp="1601150482751">
+    <state width="1877" height="281" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1601152132186" />
+    <state width="1877" height="281" key="GridCell.Tab.1.left" timestamp="1601152132186">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1601150482751" />
-    <state width="1877" height="281" key="GridCell.Tab.1.right" timestamp="1601150482751">
+    <state width="1877" height="281" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1601152132186" />
+    <state width="1877" height="281" key="GridCell.Tab.1.right" timestamp="1601152132186">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1601150482751" />
-    <state x="72" y="243" key="Vcs.Push.Dialog.v2" timestamp="1601148355092">
+    <state width="1877" height="281" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1601152132186" />
+    <state x="461" y="164" key="SettingsEditor" timestamp="1601152209093">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="72" y="243" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1601148355092" />
+    <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1601152209093" />
+    <state x="72" y="243" key="Vcs.Push.Dialog.v2" timestamp="1601150729062">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="72" y="243" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1601150729062" />
     <state x="761" y="426" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1601148350561">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -210,7 +238,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/src/server.rs</url>
-          <line>32</line>
+          <line>31</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
@@ -219,23 +247,8 @@
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/src/client.rs</url>
-          <line>23</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/src/client.rs</url>
-          <line>30</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/src/client.rs</url>
-          <line>35</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/src/server.rs</url>
-          <line>41</line>
+          <line>39</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>

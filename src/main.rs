@@ -1,8 +1,8 @@
 use project1::server::Server;
 use std::process::exit;
-use std::net::{IpAddr, Ipv4Addr, SocketAddr, ToSocketAddrs};
+use std::net::{SocketAddr, ToSocketAddrs};
 use project1::client::Client;
-use std::io::Error;
+
 use project1::player::Player;
 use project1::game::{GameResult, Move};
 
@@ -29,17 +29,14 @@ fn main() {
 
 }
 
-fn client(args: &Vec<String>) {
+fn client(args: &[String]) {
     let addrs = args[1].to_socket_addrs().expect("Second argument is a not valid socket address");
     let mut found_client = None;
     for addr in addrs {
         let client = Client::new(args[2].clone(), addr);
-        match client {
-            Ok(client) => {
-                found_client = Some(client);
-                break;
-            },
-            Err(_) => {}
+        if let Ok(client) = client {
+            found_client = Some(client);
+            break;
         }
     }
 
@@ -58,11 +55,11 @@ fn client(args: &Vec<String>) {
 
 }
 
-fn server(args: &Vec<String>, name: &String){
+fn server(args: &[String], name: &str){
     let port: u16 = args[1].parse().expect("Second argument is not a valid port");
     let addr = SocketAddr::from(([0, 0, 0, 0], port));
     //println!("Tell Opponent to connect to this address: {}", addr);
-    let mut server = Server::new(name.clone(), addr).expect(format!("Could not open socket on port {}", port).as_ref());
+    let mut server = Server::new(name.to_string(), addr).unwrap_or_else(|_| panic!("Could not open socket on port {}", port));
     server.wait_for_connect().expect("No client connected");
 
     let my_move = server.my_move();

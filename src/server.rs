@@ -1,10 +1,9 @@
-use std::env::set_current_dir;
+use std::convert::TryInto;
 use std::io::{BufRead, BufReader, BufWriter, Result, Write};
-use std::net::{SocketAddrV4, TcpListener, TcpStream, ToSocketAddrs};
+use std::net::{TcpListener, TcpStream, ToSocketAddrs};
 
 use crate::game::Move;
 use crate::player::Player;
-use std::convert::TryInto;
 
 pub struct Server {
     server_name: String,
@@ -26,9 +25,9 @@ impl Server {
     }
 
     pub fn wait_for_connect(&mut self) -> std::io::Result<()> {
-        let mut connection = self.listener.accept()?;
+        let connection = self.listener.accept()?;
 
-        let mut stream = connection.0;
+        let stream = connection.0;
         {
             let mut buffered_reader = BufReader::new(&stream);
             let mut confirm_message = String::new();
@@ -44,7 +43,7 @@ impl Server {
             }
 
             let mut enemy_name = String::new();
-            buffered_reader.read_line(&mut enemy_name);
+            buffered_reader.read_line(&mut enemy_name)?;
             let enemy = enemy_name.trim_end().to_string();
             println!("{} has joined the game", enemy);
             self.enemy_name = Some(enemy);
