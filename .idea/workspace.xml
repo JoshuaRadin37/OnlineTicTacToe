@@ -21,14 +21,7 @@
     <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="52bd2ac6-95c9-42c2-8522-78c36bf46b9e" name="Default Changelist" comment="Cleaned up output">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/client.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/player.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/player.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/server.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/local_test.rs" beforeDir="false" afterPath="$PROJECT_DIR$/tests/local_test.rs" afterDir="false" />
-    </list>
+    <list default="true" id="52bd2ac6-95c9-42c2-8522-78c36bf46b9e" name="Default Changelist" comment="Cleaned up compiler output" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -127,7 +120,7 @@
       <updated>1600902618785</updated>
       <workItem from="1600902619922" duration="4140000" />
       <workItem from="1601146952771" duration="601000" />
-      <workItem from="1601147574500" duration="4587000" />
+      <workItem from="1601147574500" duration="4677000" />
     </task>
     <task id="LOCAL-00001" summary="maybe works?">
       <created>1600905281821</created>
@@ -150,7 +143,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601150726897</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Cleaned up compiler output">
+      <created>1601152356277</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1601152356277</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -172,7 +172,8 @@
     <MESSAGE value="maybe works?" />
     <MESSAGE value="seems to fully work" />
     <MESSAGE value="Cleaned up output" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cleaned up output" />
+    <MESSAGE value="Cleaned up compiler output" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cleaned up compiler output" />
   </component>
   <component name="WindowStateProjectService">
     <state x="0" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601151111285">
@@ -183,22 +184,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="285" y="239" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1601148984750" />
-    <state width="1877" height="281" key="GridCell.Tab.0.bottom" timestamp="1601152300020">
+    <state width="1877" height="281" key="GridCell.Tab.0.bottom" timestamp="1601152425740">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1601152300020" />
-    <state width="1877" height="281" key="GridCell.Tab.0.center" timestamp="1601152300020">
+    <state width="1877" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1601152425740" />
+    <state width="1877" height="281" key="GridCell.Tab.0.center" timestamp="1601152425740">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1601152300020" />
-    <state width="1877" height="281" key="GridCell.Tab.0.left" timestamp="1601152300020">
+    <state width="1877" height="281" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1601152425740" />
+    <state width="1877" height="281" key="GridCell.Tab.0.left" timestamp="1601152425740">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1601152300020" />
-    <state width="1877" height="281" key="GridCell.Tab.0.right" timestamp="1601152300020">
+    <state width="1877" height="281" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1601152425740" />
+    <state width="1877" height="281" key="GridCell.Tab.0.right" timestamp="1601152425740">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1601152300020" />
+    <state width="1877" height="281" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1601152425740" />
     <state width="1877" height="281" key="GridCell.Tab.1.bottom" timestamp="1601152132186">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -219,10 +220,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1601152209093" />
-    <state x="72" y="243" key="Vcs.Push.Dialog.v2" timestamp="1601150729062">
+    <state x="72" y="243" key="Vcs.Push.Dialog.v2" timestamp="1601152357274">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="72" y="243" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1601150729062" />
+    <state x="72" y="243" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1601152357274" />
     <state x="761" y="426" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1601148350561">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
