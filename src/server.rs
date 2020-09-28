@@ -4,6 +4,7 @@ use std::net::{TcpListener, TcpStream, ToSocketAddrs};
 
 use crate::game::Move;
 use crate::player::Player;
+use std::process::exit;
 
 /// The server struct. The server must be created first before a client can run. The server can only
 /// hook into one client. Once the client has connected, the game runs to completion. Once a server
@@ -38,6 +39,7 @@ impl Server {
     ///
     /// If any of the above steps fail, the function fails and returns an error.
     pub fn wait_for_connect(&mut self) -> std::io::Result<()> {
+        println!("Waiting for an opponent to connect...");
         let connection = self.listener.accept()?;
 
         let stream = connection.0;
@@ -45,19 +47,19 @@ impl Server {
             let mut buffered_reader = BufReader::new(&stream);
             let mut confirm_message = String::new();
             buffered_reader.read_line(&mut confirm_message)?;
-            if confirm_message != "RPS Client Game Connect\n" {
+            if confirm_message != "RPS Client Game Connect\n" { // waits until a client lets this server know it connected
                 panic!("Connection not the client for this game");
             }
 
             {
                 let mut writer = BufWriter::new(&stream);
-                writeln!(writer, "RPS Server Game Connection Confirmed")?;
-                writeln!(writer, "{}", self.server_name)?;
-            }
+                writeln!(writer, "RPS Server Game Connection Confirmed")?; // server sends back a connection confirmation
+                writeln!(writer, "{}", self.server_name)?; // Send the server name
+            } // writer is dropped here so that the message is sent
 
             let mut enemy_name = String::new();
             buffered_reader.read_line(&mut enemy_name)?;
-            let enemy = enemy_name.trim_end().to_string();
+            let enemy = enemy_name.trim_end().to_string(); // reads the name of the client player
             println!("{} has joined the game", enemy);
             self.enemy_name = Some(enemy);
         }
@@ -77,6 +79,26 @@ impl Player for Server {
         let mut enemy_move: String = String::new();
         reader.read_line(&mut enemy_move)?;
         Ok(enemy_move.trim_end().to_string().try_into().unwrap())
+    }
+
+    fn send_is_ready(&self) -> Result<()> {
+        let mut writer = BufWriter::new(self.client.as_ref().unwrap());
+        writeln!(writer, "SERVER READY")
+    }
+
+    fn wait_for_enemy_ready(&self) -> Result<()> {
+        let mut reader = BufReader::new(self.client.as_ref().unwrap());
+        let mut enemy_move: String = String::new();
+        let read = reader.read_line(&mut enemy_move)?;
+        if enemy_move == "CLIENT READY\n" {
+            Ok(())
+        } else if read == 0 {
+            eprintln!("{} disconnected", self.enemy_name.as_ref().unwrap());
+            exit(-1);
+        } else {
+            eprintln!("Invalid message received while waiting: {}", enemy_move);
+            exit(-1);
+        }
     }
 
     fn my_name(&self) -> &str {

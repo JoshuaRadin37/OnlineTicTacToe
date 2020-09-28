@@ -15,10 +15,12 @@ pub trait Player {
             reader
                 .read_line(&mut buffer)
                 .expect("Failed to get player's move");
-            let mov = buffer.trim_end();
+            let mov = buffer.trim_end().to_lowercase();
 
-            if let Ok(ret) = mov.to_string().try_into() {
+            if let Ok(ret) = (&mov).try_into() {
                 return ret;
+            } else {
+                eprintln!("{} is not a valid move", &mov)
             }
         }
     }
@@ -33,6 +35,10 @@ pub trait Player {
     /// # Error
     /// This function will return an error if the enemy player has disconnected
     fn enemy_move(&self) -> std::io::Result<Move>;
+
+    fn send_is_ready(&self) -> std::io::Result<()>;
+
+    fn wait_for_enemy_ready(&self) -> std::io::Result<()>;
 
     /// Gets the name of this player
     fn my_name(&self) -> &str;
